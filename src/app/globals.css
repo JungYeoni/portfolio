@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+/* 테마는 layout의 인라인 스크립트가 <html data-theme>로 지정한다 */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #15181c;
+  --muted: rgb(21 24 28 / 0.6);
+  --card: rgb(0 0 0 / 0.04);
+  --card-strong: rgb(0 0 0 / 0.07);
+  --line: rgb(0 0 0 / 0.1);
+  --accent: #a16207;
+}
+
+[data-theme="dark"] {
+  --background: #0b0d10;
+  --foreground: #e6e8eb;
+  --muted: rgb(230 232 235 / 0.55);
+  --card: rgb(255 255 255 / 0.05);
+  --card-strong: rgb(0 0 0 / 0.4);
+  --line: rgb(255 255 255 / 0.1);
+  --accent: #facc15;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-card-strong: var(--card-strong);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
