@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { profile } from "@/data/portfolio";
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: "이정연 | Portfolio",
-  description: "데이터로 문제를 찾고, 서비스로 답을 만듭니다.",
+  description: profile.tagline,
 };
 
 // 첫 페인트 전에 저장된 테마(없으면 시스템 설정)를 적용해 깜빡임을 막는다
