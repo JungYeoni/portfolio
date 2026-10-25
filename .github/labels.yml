@@ -1,0 +1,23 @@
+- name: "bug"
+  color: "D73A4A"
+  description: "예상과 다른 동작 또는 오류"
+
+- name: "enhancement"
+  color: "A2EEEF"
+  description: "새 기능 또는 기존 기능 개선"
+
+- name: "task"
+  color: "4F46E5"
+  description: "리팩터링, 문서, CI 또는 설정 작업"
+
+- name: "작업전"
+  color: "E5E7EB"
+  description: "작업 시작 전"
+
+- name: "작업중"
+  color: "22C55E"
+  description: "작업 진행 중"
+
+- name: "보류"
+  color: "9CA3AF"
+  description: "작업 일시 중단"
