@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { activities, certifications, competitions, experience, profile, projects } from "@/data/portfolio";
+import { activities, awards, certifications, experience, profile, projects } from "@/data/portfolio";
 import { ExtLink, Section } from "./_components/ui";
 
 export const metadata: Metadata = {
@@ -88,7 +88,7 @@ export default function Home() {
 
         <Section id="awards" title="Awards">
           <ul className="grid gap-2 rounded-xl bg-card p-5 text-base">
-            {competitions.map((item) => (
+            {awards.map((item) => (
               <li key={item.title} className="border-b border-line pb-3 last:border-0 last:pb-0">
                 <div className="flex justify-between gap-3">
                   <span className="font-medium">
