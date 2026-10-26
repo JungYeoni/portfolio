@@ -24,6 +24,7 @@ export default function Home() {
           <a href="#experience" className="hover:text-foreground hover:underline">경력</a>
           <a href="#projects" className="hover:text-foreground hover:underline">프로젝트</a>
           <a href="#activity" className="hover:text-foreground hover:underline">활동</a>
+          <a href="#awards" className="hover:text-foreground hover:underline">수상</a>
           <a href="#certification" className="hover:text-foreground hover:underline">자격증</a>
         </nav>
 
@@ -72,39 +73,34 @@ export default function Home() {
         </Section>
 
         <Section id="activity" title="Activities">
-          <div className="grid gap-6 sm:grid-cols-2">
-            <div>
-              <h3 className="mb-3 font-semibold">대회·공모전</h3>
-              <ul className="grid gap-2 rounded-xl bg-card p-5 text-base">
-                {competitions.map((item) => (
-                  <li key={item.title} className="border-b border-line pb-3 last:border-0 last:pb-0">
-                    <div className="flex justify-between gap-3">
-                      <span className="font-medium">
-                        {item.title}
-                        {item.award && <span className="ml-2 font-bold text-sky-600 dark:text-sky-400">{item.award}</span>}
-                      </span>
-                      <span className="shrink-0 text-xs text-muted">{item.period}</span>
-                    </div>
-                    {item.detail && <p className="mt-1 text-xs text-muted">{item.detail}</p>}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-3 font-semibold">동아리</h3>
-              <ul className="grid gap-2 rounded-xl bg-card p-5 text-base">
-                {activities.map((item) => (
-                  <li key={item.title} className="border-b border-line pb-3 last:border-0 last:pb-0">
-                    <div className="flex justify-between gap-3">
-                      <span className="font-medium">{item.title}</span>
-                      <span className="shrink-0 text-xs text-muted">{item.period}</span>
-                    </div>
-                    <p className="mt-1 text-xs text-muted">{item.role}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <ul className="grid gap-2 rounded-xl bg-card p-5 text-base">
+            {activities.map((item) => (
+              <li key={item.title} className="border-b border-line pb-3 last:border-0 last:pb-0">
+                <div className="flex justify-between gap-3">
+                  <span className="font-medium">{item.title}</span>
+                  <span className="shrink-0 text-xs text-muted">{item.period}</span>
+                </div>
+                <p className="mt-1 text-xs text-muted">{item.role}</p>
+              </li>
+            ))}
+          </ul>
+        </Section>
+
+        <Section id="awards" title="Awards">
+          <ul className="grid gap-2 rounded-xl bg-card p-5 text-base">
+            {competitions.map((item) => (
+              <li key={item.title} className="border-b border-line pb-3 last:border-0 last:pb-0">
+                <div className="flex justify-between gap-3">
+                  <span className="font-medium">
+                    {item.title}
+                    {item.award && <span className="ml-2 font-bold text-accent">{item.award}</span>}
+                  </span>
+                  <span className="shrink-0 text-xs text-muted">{item.period}</span>
+                </div>
+                {item.detail && <p className="mt-1 text-xs text-muted">{item.detail}</p>}
+              </li>
+            ))}
+          </ul>
         </Section>
 
         <Section id="certification" title="Certification">

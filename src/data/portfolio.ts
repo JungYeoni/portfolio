@@ -261,8 +261,8 @@ export const experience = [
 
 export const competitions: { title: string; period: string; detail?: string; award?: string }[] = [
   { title: "미래에셋 AI Festival 2026", period: "2026.08–09", detail: "FIN터뷰 · 연금 Agent 출품" },
-  { title: "대학(원)생 재정데이터 분석 경진대회", period: "2026", detail: "유모차 · 분석 제출" },
-  { title: "Mixup Hackathon", period: "2026.05", detail: "솔솔", award: "팀 장려상" },
+  { title: "대학(원)생 재정데이터 분석 경진대회", period: "2026", detail: "유모차 · 본선 진출" },
+  { title: "Mixup Hackathon", period: "2026.05", detail: "솔솔", award: "장려상" },
   { title: "서울시 빅데이터 활용 공모전", period: "2026.04–05", detail: "서울숨셔 · 출품" },
   { title: "제13회 전국 ICT융합 공모전", period: "2026", detail: "비자부기 · 출품" },
   { title: "세종대학교 창업캠프", period: "2025", award: "대상" },
