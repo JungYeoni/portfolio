@@ -79,10 +79,13 @@ export default function Home() {
                 {competitions.map((item) => (
                   <li key={item.title} className="border-b border-line pb-3 last:border-0 last:pb-0">
                     <div className="flex justify-between gap-3">
-                      <span className="font-medium">{item.title}</span>
+                      <span className="font-medium">
+                        {item.title}
+                        {item.award && <span className="ml-2 font-bold text-sky-600 dark:text-sky-400">{item.award}</span>}
+                      </span>
                       <span className="shrink-0 text-xs text-muted">{item.period}</span>
                     </div>
-                    <p className="mt-1 text-xs text-muted">{item.detail}</p>
+                    {item.detail && <p className="mt-1 text-xs text-muted">{item.detail}</p>}
                   </li>
                 ))}
               </ul>
