@@ -259,9 +259,10 @@ export const experience = [
   },
 ];
 
-export const awards = [
+export const awards: { title: string; period: string; detail?: string; award: string }[] = [
   { title: "Mixup Hackathon", period: "2026.05", detail: "솔솔", award: "장려상" },
   { title: "대학(원)생 재정데이터 분석 경진대회", period: "2026", detail: "유모차", award: "본선 진출" },
+  { title: "제2회 신격호 롯데 청년기업가대상", period: "2025", detail: "트립게더", award: "본선 진출" },
   { title: "세종대학교 창업캠프", period: "2025", award: "대상" },
   { title: "YLC 기업분석대회", period: "2025", award: "우수상" },
   { title: "세종대학교 SW·AI 해커톤", period: "2025", award: "장려상" },
