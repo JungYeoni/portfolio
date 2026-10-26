@@ -8,6 +8,7 @@ export type Project = {
   sortDate: string;
   category: Category[];
   role: string;
+  shortDescription: string;
   summary: string;
   stories: { title: string; paragraphs: string[] }[];
   stack: string[];
@@ -19,6 +20,8 @@ type CompactProject = {
   period: string;
   sortDate: string;
   category: Category;
+  role: string;
+  shortDescription: string;
   paragraphs: string[];
   stack: string[];
   href: string;
@@ -28,6 +31,7 @@ export const profile = {
   nameKo: "이정연",
   nameEn: "Jungyeon Lee",
   tagline: "데이터를 분석하고, 직접 구현해 검증합니다.",
+  shortAbout: "세종대학교에서 데이터사이언스와 경제학을 공부하며, 데이터 분석과 머신러닝을 중심으로 프로젝트에 참여하고 있습니다. 숫자와 결과의 맥락을 이해하고 직접 구현해 검증하는 과정에 관심이 있습니다.",
   about: [
     "세종대학교에서 데이터사이언스와 경제학을 공부하며, 머신러닝·딥러닝을 중심으로 마케팅 등 다양한 분야에 관심을 두고 배우고 있습니다. 숫자와 결과를 그대로 보기보다는, 그 안에 담긴 맥락과 의미를 이해하는 과정에 흥미를 느낍니다.",
     "새로운 사람들을 만나고 함께 고민하며 다양한 프로젝트에 참여하는 경험을 중요하게 생각합니다.",
@@ -50,6 +54,7 @@ const featured: Project[] = [
     sortDate: "2025-11-25",
     category: ["AI 서비스"],
     role: "AI 서버 · 영상 처리 · 백엔드 연동",
+    shortDescription: "SNS 게시물에서 여행 장소를 찾아 저장하는 서비스",
     summary: "트립게더는 SNS에서 본 여행 장소를 다시 찾고 저장할 수 있도록 게시물 URL을 분석하는 팀 서비스입니다. AI 서버는 캡션·이미지·영상에서 텍스트를 모아 장소 정보를 구조화하고 백엔드로 전달합니다. 저는 영상 자막 처리, YouTube Shorts 처리, 장소 추출 API와 콜백 계약을 맡았습니다.",
     stories: [
       {
@@ -90,6 +95,7 @@ const featured: Project[] = [
     sortDate: "2026-07-11",
     category: ["모델링", "분석"],
     role: "고객 행동 분석 · 추천 모델 평가",
+    shortDescription: "고객 행동을 분석해 추천 순위를 개선한 프로젝트",
     summary: "추크크는 상품이 너무 많아 원하는 상품을 찾기 어려운 상황에서 고객 행동을 해석하고 추천 순위를 개선하려 한 투빅스 컨퍼런스 팀 프로젝트입니다. 팀은 클릭스트림에서 페르소나를 만들고 추천 후보를 재정렬하는 데모를 제작했습니다. 저는 학습 기간의 행동 세그먼트와 LightGCN 비교 실험, 데모의 평가 지표 연결에 참여했습니다.",
     stories: [
       {
@@ -126,6 +132,7 @@ const featured: Project[] = [
     sortDate: "2026-08-09",
     category: ["분석", "모델링"],
     role: "재정 데이터 분석 · 사업 분류",
+    shortDescription: "지역별 저출생 예산과 출생환경지표를 비교한 분석",
     summary: "유모차는 지역별 저출생 대응 계획예산이 출생환경지표와 어떻게 대응하는지 살펴본 재정데이터 분석 경진대회 팀 프로젝트입니다. 서로 다른 연도와 지자체의 세부사업을 같은 기준으로 분류하고 비교 가능한 패널을 만드는 일이 분석의 출발점이었습니다. 저는 사업 분류 모델, 지역·연도별 재정 패널, 시차별 관계 분석과 결과 시각화를 맡았습니다.",
     stories: [
       {
@@ -162,6 +169,7 @@ const featured: Project[] = [
     sortDate: "2026-05-14",
     category: ["분석", "AI 서비스"],
     role: "장소 데이터 구축 · 추천 로직",
+    shortDescription: "위치와 취향에 맞는 서울 휴식 공간 추천 서비스",
     summary: "서울숨셔는 이용자의 위치와 기분, 소음 선호, 도시 환경에 맞는 서울의 휴식 공간과 책을 함께 추천한 서울시 빅데이터 활용 공모전 출품작입니다. 팀은 공공 공간 자료와 실시간 환경 정보를 결합해 추천 결과를 만들었습니다. 저는 장소 마스터데이터 정제, 거리·반경 피처, 추천 Edge Function과 시나리오 검증을 맡았습니다.",
     stories: [
       {
@@ -197,9 +205,11 @@ const others: CompactProject[] = [
     period: "2026.05",
     sortDate: "2026-05-23",
     category: "AI 서비스",
+    role: "질문 선택 에이전트, API",
+    shortDescription: "답변에 따라 다음 질문을 고르는 AI 면접 서비스",
     paragraphs: [
       "이력서와 채용공고를 바탕으로 지원자의 답변에 따라 다음 면접 질문을 고르는 해커톤 팀 서비스입니다. 저는 LangGraph로 질문 역할을 선택하는 에이전트와 Solar 모델 호출, 첫 질문 API를 구현했습니다.",
-      "샘플 면접에서 답변에 따른 질문 선택과 구조화된 평가 결과를 확인했습니다. Upstage Solar Pro3 AI Agent 해커톤에서 팀 장려상을 받았습니다.",
+      "샘플 면접에서 답변에 따른 질문 선택과 구조화된 평가 결과를 확인했습니다. Mixup Hackathon에서 팀 장려상을 받았습니다.",
     ],
     stack: ["Python", "FastAPI", "LangGraph", "Upstage Solar", "uv"],
     href: "https://github.com/Mixup-Agent/solsol",
@@ -209,6 +219,8 @@ const others: CompactProject[] = [
     period: "2026.08",
     sortDate: "2026-08-28",
     category: "AI 서비스",
+    role: "문서 추출·데이터 적재, 지도 연동",
+    shortDescription: "비자 요건 문서를 구조화해 웹 서비스에 연결한 프로젝트",
     paragraphs: [
       "공식 비자 요건 문서를 웹 서비스에서 추적 가능한 데이터로 연결한 공모전 팀 프로젝트입니다. 저는 원문 추출과 수치·단위 검토 도구, 공통 스키마, Supabase 적재기와 기관 지도 연동을 구현했습니다.",
       "제출 당시 데이터 적재 PR에서는 13개 테이블·1,101행과 재실행 안정성을 확인했습니다. 문서마다 다른 표현에 대응해 자동 추출 결과를 사람이 검수하는 절차를 함께 뒀습니다.",
@@ -221,6 +233,8 @@ const others: CompactProject[] = [
     period: "2026.09–",
     sortDate: "2026-10-25",
     category: "분석",
+    role: "데이터 탐색, 위험 신호 검증",
+    shortDescription: "지역·인구집단의 고립 의심 신호를 탐색하는 분석",
     paragraphs: [
       "통신 유동인구와 카드 소비 집계에서 지역·인구집단 단위의 사회적 고립 의심 신호를 탐색하는 진행 중인 팀 과제입니다. 저는 제공 데이터 탐색, 24개 위험 특징 사전, 60대 이상 활동 감소 신호와 외부 자료 비교, 지수 구성의 민감도 검증을 맡았습니다.",
       "분석 단위를 지역과 인구집단으로 설정하고, 독립 지표와의 연관성 및 대안 설명을 함께 확인하고 있습니다.",
@@ -232,10 +246,23 @@ const others: CompactProject[] = [
 
 export const projects: (Project | CompactProject)[] = [...featured, ...others].sort((a, b) => b.sortDate.localeCompare(a.sortDate));
 
+export const experience = [
+  {
+    organization: "트립게더 (Tripgether)",
+    period: "2025.09–11",
+    description: "숏폼 콘텐츠의 장소 정보 추출 파이프라인 개발과 AI 서버·백엔드 연계 설계에 참여",
+  },
+  {
+    organization: "금성출판사 (Kumsung Publishing)",
+    period: "2023.11–2024.09",
+    description: "정보 교과 디지털 교과서 콘텐츠 검토와 학습 구조 설계를 지원",
+  },
+];
+
 export const competitions = [
   { title: "미래에셋 AI Festival 2026", period: "2026.08–09", detail: "FIN터뷰 · 연금 Agent 출품" },
   { title: "대학(원)생 재정데이터 분석 경진대회", period: "2026", detail: "유모차 · 분석 제출" },
-  { title: "Upstage Solar Pro3 AI Agent 해커톤", period: "2026.05", detail: "솔솔 · 팀 장려상" },
+  { title: "Mixup Hackathon", period: "2026.05", detail: "솔솔 · 팀 장려상" },
   { title: "서울시 빅데이터 활용 공모전", period: "2026.04–05", detail: "서울숨셔 · 출품" },
   { title: "제13회 전국 ICT융합 공모전", period: "2026", detail: "비자부기 · 출품" },
   { title: "세종대학교 창업캠프", period: "2025", detail: "대상" },
@@ -251,8 +278,8 @@ export const activities = [
 ];
 
 export const certifications = [
-  { title: "데이터 분석 준전문가 (ADsP)", date: "2025.09.05", number: "046000704" },
-  { title: "SQL 개발자 (SQLD)", date: "2026.03.27", number: "SQLD-060010983" },
-  { title: "우슈쿵푸 1단 🐼", date: "2011.12.14", number: "11-1-1871" },
+  { title: "데이터 분석 준전문가 (ADsP)", date: "2025.09.05" },
+  { title: "SQL 개발자 (SQLD)", date: "2026.03.27" },
+  { title: "우슈쿵푸 1단 🐼", date: "2011.12.14" },
 ];
 

@@ -18,7 +18,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="라이트/다크 모드 전환"
-      className="rounded-md border border-line px-2.5 py-1 text-base hover:bg-card"
+      className="shrink-0 p-1 text-2xl hover:text-accent"
     >
       <span className="dark:hidden">☾</span>
       <span className="hidden dark:inline">☀</span>
