@@ -71,7 +71,7 @@ export default function Home() {
           </Link>
         </Section>
 
-        <Section id="activity" title="Activity">
+        <Section id="activity" title="Activities">
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
               <h3 className="mb-3 font-semibold">대회·공모전</h3>
