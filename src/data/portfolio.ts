@@ -50,7 +50,7 @@ export const profile = {
 const featured: Project[] = [
   {
     title: "트립게더 (Tripgether)",
-    period: "2025.10–11",
+    period: "2025.09–11",
     sortDate: "2025-11-25",
     category: ["AI 서비스"],
     role: "AI 서버 · 영상 처리 · 백엔드 연동",
