@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { profile } from "@/data/portfolio";
+import { SiteNav } from "./_components/site-nav";
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "이정연 | Portfolio",
+  title: "이정연",
   description: profile.tagline,
 };
 
@@ -23,7 +25,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteNav name={profile.nameEn.split(" ")[0].toUpperCase()} />
+        {children}
+        <footer className="mt-auto border-t border-line px-6 py-8 text-base text-muted">
+          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4">
+            <span>🦦 {profile.nameKo}</span>
+            <div className="flex gap-5">
+              <Link href="/" className="hover:text-foreground hover:underline">소개</Link>
+              <Link href="/portfolio" className="hover:text-foreground hover:underline">포트폴리오</Link>
+            </div>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
