@@ -9,11 +9,11 @@ export function SiteNav({ name }: { name: string }) {
 
   return (
     <nav aria-label="주 메뉴" className="sticky top-0 z-10 border-b border-line bg-background/90 backdrop-blur">
-      <div className="flex w-full items-center justify-between gap-3 px-4 py-5 sm:px-6 lg:px-10">
-        <Link href="/" className="shrink-0 text-2xl font-black tracking-tight sm:text-3xl md:text-4xl">
+      <div className="flex w-full flex-wrap items-center justify-between gap-x-2 gap-y-1 px-3 py-4 sm:gap-3 sm:px-6 sm:py-5 lg:px-10">
+        <Link href="/" className="shrink-0 text-xl font-black tracking-tight sm:text-3xl md:text-4xl">
           {name}
         </Link>
-        <div className="flex items-center gap-3 sm:gap-8">
+        <div className="flex items-center gap-2 sm:gap-8">
           {[
             { href: "/portfolio", label: "portfolio" },
             { href: "/", label: "about" },
@@ -24,7 +24,7 @@ export function SiteNav({ name }: { name: string }) {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`pb-1 text-lg font-bold sm:text-2xl ${active ? "text-foreground underline decoration-wavy decoration-2 decoration-accent underline-offset-[10px]" : "text-muted hover:text-foreground"}`}
+                className={`pb-1 text-base font-bold sm:text-2xl ${active ? "text-foreground underline decoration-wavy decoration-2 decoration-accent underline-offset-[10px]" : "text-muted hover:text-foreground"}`}
               >
                 {item.label}
               </Link>
