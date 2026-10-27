@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { activities, awards, certifications, experience, profile, projects, skills } from "@/data/portfolio";
+import { activities, awards, certifications, education, experience, profile, projects, skills } from "@/data/portfolio";
 import { ExtLink, Section } from "./_components/ui";
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export default function Home() {
 
         <nav aria-label="소개 페이지 목차" className="mt-12 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
           <a href="#about" className="hover:text-foreground hover:underline">소개</a>
+          <a href="#education" className="hover:text-foreground hover:underline">학력</a>
           <a href="#experience" className="hover:text-foreground hover:underline">경력</a>
           <a href="#projects" className="hover:text-foreground hover:underline">프로젝트</a>
           <a href="#skills" className="hover:text-foreground hover:underline">기술</a>
@@ -38,6 +39,20 @@ export default function Home() {
               {profile.links.map((link) => <ExtLink key={link.label} {...link} />)}
               <Link href="/portfolio" className="font-semibold text-foreground hover:underline">포트폴리오 보기 ↗</Link>
             </div>
+          </div>
+        </Section>
+
+        <Section id="education" title="Education">
+          <div className="grid gap-8">
+            {education.map((item) => (
+              <article key={item.school} className="grid gap-2 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-12">
+                <p className="pt-1 text-sm font-medium text-muted md:text-base">{item.period}</p>
+                <div className="min-w-0">
+                  <h3 className="text-lg font-semibold md:text-xl">{item.school}</h3>
+                  <p className="mt-2 text-base leading-relaxed text-muted">{item.major}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </Section>
 

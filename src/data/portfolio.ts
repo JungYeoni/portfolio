@@ -32,7 +32,7 @@ export const profile = {
   nameEn: "Jungyeon Lee",
   tagline: "데이터를 분석하고, 직접 구현해 검증합니다.",
   about: [
-    "세종대학교에서 데이터사이언스와 경제학을 공부하는 이정연입니다. 숫자가 나온 배경을 살피고, 궁금한 점을 데이터로 직접 확인하는 걸 좋아합니다.",
+    "숫자가 나온 배경을 살피고, 궁금한 점을 데이터로 직접 확인하는 걸 좋아합니다.",
   ],
   links: [
     { label: "GitHub", href: "https://github.com/JungYeoni" },
@@ -286,7 +286,11 @@ export const experience = [
   },
 ];
 
-export const awards: { title: string; period: string; detail?: string; award: string }[] = [
+export const education = [
+  { school: "세종대학교", period: "재학 중", major: "데이터사이언스학과 · 경제학과" },
+];
+
+export const awards:{ title: string; period: string; detail?: string; award: string }[] = [
   { title: "Mixup Hackathon", period: "2026.05", detail: "솔솔 (sol sol)", award: "장려상" },
   { title: "대학(원)생 재정데이터 분석 경진대회", period: "2026", detail: "유모차 (Yumocha)", award: "본선 진출" },
   { title: "제2회 신격호 롯데 청년기업가대상", period: "2025", detail: "트립게더 (Tripgether)", award: "본선 진출" },
