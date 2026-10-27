@@ -15,7 +15,7 @@ export default function Home() {
         <header>
           <div>
             <p className="text-base text-muted">🦦 {profile.nameKo} · {profile.nameEn}</p>
-            <h1 className="mt-3 max-w-xl text-4xl leading-tight font-black">{profile.tagline}</h1>
+            <h1 className="mt-3 text-4xl leading-tight font-black">{profile.tagline}</h1>
           </div>
         </header>
 
