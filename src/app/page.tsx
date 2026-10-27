@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { activities, awards, certifications, experience, profile, projects } from "@/data/portfolio";
+import { activities, awards, certifications, experience, profile, projects, skills } from "@/data/portfolio";
 import { ExtLink, Section } from "./_components/ui";
 
 export const metadata: Metadata = {
@@ -23,6 +23,7 @@ export default function Home() {
           <a href="#about" className="hover:text-foreground hover:underline">소개</a>
           <a href="#experience" className="hover:text-foreground hover:underline">경력</a>
           <a href="#projects" className="hover:text-foreground hover:underline">프로젝트</a>
+          <a href="#skills" className="hover:text-foreground hover:underline">기술</a>
           <a href="#activity" className="hover:text-foreground hover:underline">활동</a>
           <a href="#awards" className="hover:text-foreground hover:underline">수상</a>
           <a href="#certification" className="hover:text-foreground hover:underline">자격증</a>
@@ -72,6 +73,17 @@ export default function Home() {
           <Link href="/portfolio" className="mt-12 inline-block text-lg text-muted hover:text-foreground hover:underline">
             자세한 이야기는 포트폴리오에 ↗
           </Link>
+        </Section>
+
+        <Section id="skills" title="Skills">
+          <div className="grid gap-8">
+            {skills.map((item) => (
+              <article key={item.name} className="grid gap-2 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-12">
+                <h3 className="text-lg font-semibold md:text-xl">{item.name}</h3>
+                <p className="min-w-0 text-base leading-relaxed text-muted">{item.usage}</p>
+              </article>
+            ))}
+          </div>
         </Section>
 
         <Section id="activity" title="Activities">
