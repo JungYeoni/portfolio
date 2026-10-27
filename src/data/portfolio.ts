@@ -206,7 +206,7 @@ const others: CompactProject[] = [
     role: "질문 선택 에이전트, API",
     shortDescription: "답변에 따라 다음 질문을 고르는 AI 면접 서비스",
     paragraphs: [
-      "이력서와 채용공고를 바탕으로 지원자의 답변에 따라 다음 면접 질문을 고르는 해커톤 팀 서비스입니다. 저는 LangGraph로 질문 역할을 선택하는 에이전트와 Solar 모델 호출, 첫 질문 API를 구현했습니다.",
+      "이력서와 채용공고를 바탕으로 지원자의 답변에 따라 다음 면접 질문을 고르는 해커톤 팀 서비스입니다. 저는 팀의 LangGraph 면접 흐름에서 Meta Agent의 질문 선택·폴백 로직과 Solar 모델 호출, 첫 질문 API를 구현했습니다.",
       "샘플 면접에서 답변에 따른 질문 선택과 구조화된 평가 결과를 확인했습니다. Mixup Hackathon에서 팀 장려상을 받았습니다.",
     ],
     stack: ["Python", "FastAPI", "LangGraph", "Upstage Solar", "uv"],
@@ -264,7 +264,7 @@ export const skills = [
   },
   {
     name: "LangGraph",
-    usage: "지원자의 답변에 따라 다음 면접 질문의 역할을 고르는 에이전트를 구현했습니다. (솔솔)",
+    usage: "팀의 LangGraph 면접 그래프에 연결된 Meta Agent에서 답변에 따른 면접관 선택·폴백 로직을 구현했습니다. (솔솔)",
   },
 ];
 
