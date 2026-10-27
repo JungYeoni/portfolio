@@ -286,8 +286,16 @@ export const experience = [
   },
 ];
 
-export const education = [
-  { school: "세종대학교", period: "재학 중", major: "데이터사이언스학과 · 경제학과" },
+export const education: { school: string; period: string; majors?: { degree: string; college: string }[] }[] = [
+  {
+    school: "Sejong University",
+    period: "2023.02–Present",
+    majors: [
+      { degree: "B.S. in Data Science", college: "College of Software Convergence" },
+      { degree: "B.A. in Economics", college: "College of Business & Economics" },
+    ],
+  },
+  { school: "Cheongdam High School", period: "2020.03–2022.12" },
 ];
 
 export const awards:{ title: string; period: string; detail?: string; award: string }[] = [

@@ -49,7 +49,11 @@ export default function Home() {
                 <p className="pt-1 text-sm font-medium text-muted md:text-base">{item.period}</p>
                 <div className="min-w-0">
                   <h3 className="text-lg font-semibold md:text-xl">{item.school}</h3>
-                  <p className="mt-2 text-base leading-relaxed text-muted">{item.major}</p>
+                  {item.majors?.map((major) => (
+                    <p key={major.degree} className="mt-2 text-base leading-relaxed">
+                      {major.degree} <span className="inline-block text-muted">({major.college})</span>
+                    </p>
+                  ))}
                 </div>
               </article>
             ))}
