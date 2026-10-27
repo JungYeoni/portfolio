@@ -249,30 +249,6 @@ const others: CompactProject[] = [
 
 export const projects: (Project | CompactProject)[] = [...featured, ...others].sort((a, b) => b.sortDate.localeCompare(a.sortDate));
 
-// 기술별로 프로젝트에서 실제로 한 일 — 내용은 위 프로젝트 본문에 있는 사실만 쓴다
-export const skills = [
-  {
-    name: "pandas",
-    usage: "17개 시도의 2016~2024년 예산 자료를 지역·연도·정책 영역 단위로 결합해 9개년 재정 패널을 만들고 합계를 전수 점검했습니다. (유모차)",
-  },
-  {
-    name: "scikit-learn",
-    usage: "TF-IDF와 로지스틱 회귀로 예산 사업 분류기를 2021~2024년 라벨로 재학습해 최종 macro-F1 0.893을 기록했고(유모차), KMeans로 고객 행동 세그먼트를 만들었습니다(추크크).",
-  },
-  {
-    name: "FastAPI",
-    usage: "트립게더 AI 서버에서 장소 추출 API와 백엔드 콜백 계약을 맡았고, 솔솔의 첫 질문 API를 만들었습니다.",
-  },
-  {
-    name: "Supabase",
-    usage: "비자부기에서 13개 테이블·1,101행을 다시 실행해도 안전하게 적재하는 적재기를, 서울숨셔에서 추천 서버 함수를 구현했습니다.",
-  },
-  {
-    name: "LangGraph",
-    usage: "팀의 LangGraph 면접 그래프에 연결된 Meta Agent에서 답변에 따른 면접관 선택·폴백 로직을 구현했습니다. (솔솔)",
-  },
-];
-
 export const experience = [
   {
     organization: "트립게더 (Tripgether)",
