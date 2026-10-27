@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { profile } from "@/data/portfolio";
+import { SiteFooter } from "./_components/site-footer";
 import { SiteNav } from "./_components/site-nav";
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import "./globals.css";
@@ -19,6 +19,8 @@ var t=saved();if(chosen(t)){d.dataset.theme=t;return}
 d.dataset.theme=m.matches?"dark":"light";
 m.addEventListener("change",function(e){var c=saved();if(!chosen(c)&&c!=="blocked")d.dataset.theme=e.matches?"dark":"light"})})()`;
 
+const siteName = profile.nameEn.split(" ")[0].toUpperCase();
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ko" className="h-full antialiased" suppressHydrationWarning>
@@ -26,17 +28,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="min-h-full flex flex-col">
-        <SiteNav name={profile.nameEn.split(" ")[0].toUpperCase()} />
+        <SiteNav name={siteName} />
         {children}
-        <footer className="mt-auto border-t border-line px-6 py-8 text-base text-muted">
-          <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4">
-            <span>🦦 {profile.nameKo}</span>
-            <div className="flex gap-5">
-              <Link href="/" className="hover:text-foreground hover:underline">소개</Link>
-              <Link href="/portfolio" className="hover:text-foreground hover:underline">포트폴리오</Link>
-            </div>
-          </div>
-        </footer>
+        <SiteFooter name={siteName} />
       </body>
     </html>
   );
