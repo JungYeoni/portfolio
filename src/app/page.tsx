@@ -30,7 +30,9 @@ export default function Home() {
 
         <Section id="about" title="About">
           <div className="max-w-3xl rounded-xl bg-card p-6">
-            <p className="leading-8 text-muted">{profile.shortAbout}</p>
+            {profile.about.map((text) => (
+              <p key={text} className="mt-3 leading-8 text-muted first:mt-0">{text}</p>
+            ))}
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-line pt-5 text-base text-muted">
               {profile.links.map((link) => <ExtLink key={link.label} {...link} />)}
               <Link href="/portfolio" className="font-semibold text-foreground hover:underline">포트폴리오 보기 ↗</Link>
