@@ -37,7 +37,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - 정해진 브랜치명·커밋·PR 형식, 운영 반영 절차, 라벨은 반복해서 묻지 않는다. 이슈 범위 밖 변경, 확인되지 않은 콘텐츠, 의존성 추가는 먼저 사용자에게 확인한다.
 - Next.js 코드를 작성하기 전에 `node_modules/next/dist/docs/`의 관련 문서를 확인한다.
 - 현재 프로필·프로젝트·활동·수상 등 이력 데이터의 원본은 `src/data/portfolio.ts`다. 컴포넌트에 중복 하드코딩하지 않고, 데이터 저장 구조를 바꾸면 이 규칙도 갱신한다.
-- 색상은 `src/app/globals.css`의 디자인 토큰을 사용하고 라이트·다크 테마를 모두 확인한다. 디자인 규칙은 [이슈 #9](https://github.com/JungYeoni/portfolio/issues/9)를 참고한다.
+- 색상은 `src/app/globals.css`의 디자인 토큰을 사용하고 라이트·다크 테마를 모두 확인한다. 디자인 규칙은 [`docs/design-system.md`](docs/design-system.md)를 참고하고, 토큰이나 규칙을 바꾸면 이 문서도 함께 갱신한다.
 - 화면을 바꾸면 소개·포트폴리오 페이지를 모바일·태블릿·데스크톱과 라이트·다크 테마에서 열어 가로 넘침, 문단, 링크, 페이지 이동을 확인한다.
 - API 키, OAuth 시크릿, DB URL은 코드·문서·커밋에 넣지 않고 환경 변수로 관리한다.
 - 라이브러리를 추가하기 전에 기본 기능과 기존 의존성으로 해결할 수 있는지 확인한다.

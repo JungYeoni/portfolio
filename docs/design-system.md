@@ -13,7 +13,7 @@
 | `foreground` | `#15181c` | `#e6e8eb` | 기본 글자색, 강조 본문 |
 | `muted` | `rgb(21 24 28 / 0.6)` | `rgb(230 232 235 / 0.55)` | 보조 글자색(기간, 설명, 비활성 링크) |
 | `card` | `#f7f7f7` | `rgb(255 255 255 / 0.05)` | 카드 배경 |
-| `card-strong` | `rgb(0 0 0 / 0.07)` | `rgb(0 0 0 / 0.4)` | 카드 위 강조 배경 |
+| `card-strong` | `rgb(0 0 0 / 0.07)` | `rgb(0 0 0 / 0.4)` | 정의만 되어 있고 현재 사용처 없음 |
 | `line` | `rgb(0 0 0 / 0.1)` | `rgb(255 255 255 / 0.1)` | 구분선, 테두리 |
 | `accent` | `#a16207` | `#facc15` | 강조(활성 메뉴 밑줄, 수상 표기, 번호, 토글 hover) |
 
@@ -50,6 +50,7 @@
 - **세로 여백**: 소개 페이지 `py-16`, 포트폴리오 페이지 `pb-16`.
 - **섹션 간격**: `Section`이 `mt-24`, 제목 아래 `mb-8`, 앵커 이동용 `scroll-mt-24`를 갖는다.
 - **긴 글 폭**: 문단은 `max-w-3xl`로 제한해 줄 길이를 유지한다.
+- **기간–내용 2열 목록**: 경력·프로젝트 목록은 `md` 이상에서 `md:grid-cols-[12rem_minmax(0,1fr)] md:gap-12`로 왼쪽에 기간, 오른쪽에 내용을 둔다. 그보다 좁으면 한 열로 쌓인다.
 - **반응형 기준 폭**: 확정 예정 (#5). 현재는 Tailwind 기본 구간(`sm` 640px, `md` 768px, `lg` 1024px)을 쓴다.
 - **푸터**: 본문과 같은 `max-w-5xl`, 상단 `border-line`, `px-6 py-8`.
 
@@ -60,8 +61,17 @@
 - **카드**: `rounded-xl bg-card`, 내부 패딩 `p-5`~`p-6`. 목록형 카드의 항목 사이는 `border-b border-line`으로 나누고 마지막 항목은 테두리를 뺀다.
 - **태그(pill)**: `rounded-full border border-line px-2 py-0.5 text-xs`. 포트폴리오 프로젝트의 카테고리에 쓴다.
 - **외부 링크**: `ExtLink`를 쓴다. 새 탭(`target="_blank"`, `rel="noreferrer"`)으로 열고 라벨 뒤에 ` ↗`를 붙이며 hover 시 밑줄. 내부 페이지로 가는 강조 링크도 같은 `↗` 표기를 따른다.
+- **텍스트 링크 hover**: 보조 링크는 `text-muted`로 두고 hover 시 `hover:text-foreground hover:underline`. 소개 페이지 목차, 푸터 링크가 이 규칙을 따른다.
+- **소개 페이지 목차**: 헤더 아래 `text-sm text-muted` 앵커 링크 목록(`aria-label="소개 페이지 목차"`). 섹션 `id`와 1:1로 맞춘다.
 - **네비바**: `sticky top-0 z-10`, `border-b border-line`, `bg-background/90 backdrop-blur`. 현재 페이지 메뉴는 `aria-current="page"`와 `text-foreground`, 물결 밑줄(`decoration-wavy decoration-accent`)로 표시하고, 나머지는 `text-muted`로 둔다.
 - **테마 토글**: 네비바 오른쪽 끝, `text-2xl`, hover 시 `text-accent`. `aria-label`을 반드시 유지한다.
+
+## 접근성
+
+- 페이지마다 `h1`을 하나 둔다. 화면에 제목을 보이지 않는 포트폴리오 페이지는 `sr-only`로 둔다.
+- 랜드마크 `nav`에는 `aria-label`을 붙이고(주 메뉴, 소개 페이지 목차), 현재 페이지 메뉴는 `aria-current="page"`로 표시한다.
+- 아이콘만 있는 버튼(테마 토글)은 `aria-label`을 단다.
+- 포커스 표시는 브라우저 기본값을 쓴다. 별도 `focus` 스타일은 아직 없다.
 
 ## 모션
 
@@ -72,3 +82,10 @@
 
 - 프로필·경력·프로젝트·활동·수상·자격증 콘텐츠는 `src/data/portfolio.ts`에서만 수정한다. 컴포넌트에 같은 내용을 중복 하드코딩하지 않는다.
 - 확인되지 않은 수치·결과는 지어내지 않고 비워 두거나 "작성 예정"으로 표시한다.
+- 문구는 [이슈 #20](https://github.com/JungYeoni/portfolio/issues/20)의 원칙을 따른다.
+
+## 변경 후 확인
+
+- 소개(`/`)·포트폴리오(`/portfolio`) 페이지를 모바일·태블릿·데스크톱과 라이트·다크 테마에서 열어 가로 넘침, 문단, 링크, 페이지 이동을 확인한다.
+- 문단 끝줄에 한두 단어나 조사·기호만 남지 않는지 확인하고, 어색하면 문장 길이·표현 또는 본문 폭을 조정한다.
+- 새 색이 필요하면 컴포넌트에 직접 쓰지 않고 `globals.css`에 라이트·다크 토큰을 함께 추가한 뒤 이 문서의 색 토큰 표를 갱신한다.
