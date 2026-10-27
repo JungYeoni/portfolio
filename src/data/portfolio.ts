@@ -63,10 +63,10 @@ const featured: Project[] = [
         ],
       },
       {
-        title: "배포 환경에서 OCR 대안 검토하기",
+        title: "배포 환경에서 OCR 대안 시험하기",
         paragraphs: [
-          "Upstage OCR의 요청 제한에 대응하려 EasyOCR과 PaddleOCR을 대안으로 검토했습니다. EasyOCR은 로컬에서는 동작했지만 배포 대상인 Synology NAS에서는 구동되지 않았습니다.",
-          "그래서 서비스 배포 경로에는 Upstage OCR을 유지했습니다. PaddleOCR은 별도 브랜치에서 적용 가능성을 시험했습니다.",
+          "Upstage OCR의 요청 제한에 대응하려 EasyOCR과 PaddleOCR 대안을 직접 시험했습니다. EasyOCR은 로컬에서는 동작했지만 배포 대상인 Synology NAS에서는 구동되지 않았습니다.",
+          "PaddleOCR은 별도 브랜치에서 적용 가능성을 시험했고, 최종 배포에서는 Upstage OCR 기반 처리를 유지했습니다.",
         ],
       },
       {
