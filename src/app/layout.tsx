@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { profile } from "@/data/portfolio";
 import { SiteFooter } from "./_components/site-footer";
 import { SiteNav } from "./_components/site-nav";
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteNav name={siteName} />
         {children}
         <SiteFooter name={siteName} />
+        <Analytics />
       </body>
     </html>
   );
