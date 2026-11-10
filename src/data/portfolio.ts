@@ -24,7 +24,7 @@ type CompactProject = {
   shortDescription: string;
   paragraphs: string[];
   stack: string[];
-  href: string;
+  href?: string;
 };
 
 export const profile = {
@@ -233,17 +233,17 @@ const others: CompactProject[] = [
   },
   {
     title: "사회적 고립 분석 (Social Isolation Analysis)",
-    period: "2026.09–",
+    period: "2026.09–10",
     sortDate: "2026-10-25",
     category: "분석",
     role: "데이터 탐색, 위험 신호 검증",
     shortDescription: "지역·인구집단의 고립 의심 신호를 탐색하는 분석",
     paragraphs: [
-      "통신 유동인구와 카드 소비 집계에서 지역·인구집단 단위의 사회적 고립 의심 신호를 탐색하는 진행 중인 팀 과제입니다. 저는 제공 데이터 탐색, 24개 위험 특징 사전, 60대 이상 활동 감소 신호와 외부 자료 비교, 지수 구성의 민감도 검증을 맡았습니다.",
-      "분석 단위를 지역과 인구집단으로 설정하고, 독립 지표와의 연관성 및 대안 설명을 함께 확인하고 있습니다.",
+      "통신 유동인구와 카드 소비 집계에서 지역·인구집단 단위의 사회적 고립 의심 신호를 찾은 2026 빅콘테스트 팀 출품작입니다(결과 발표 전). 저는 제공 데이터 탐색, 24개 위험 특징 사전, 60대 이상 활동 감소 신호와 외부 자료 비교, 지수 구성의 민감도 검증을 맡았습니다.",
+      "팀원이 설계한 위험지수를 직접 재현해 보니 변수 간 일관성 값이 원래 결과와 크게 달랐고, 원인은 '주말 유동 비율' 변수의 부호를 서로 반대로 둔 데 있었습니다. 이후에는 재현 전에 단위·부호·필터 기준 같은 가정을 먼저 맞췄습니다.",
+      "제공 데이터로 볼 수 있는 것은 고립의 간접 신호뿐이라, 점수를 '고립 판정'이 아니라 '먼저 확인해 볼 지역'의 우선순위로 전달해야 한다는 점을 배웠습니다.",
     ],
     stack: ["Python", "pandas", "NumPy", "SciPy", "scikit-learn", "pytest"],
-    href: "https://github.com/Team-Hambugi-Lab/bigcontest-social-isolation",
   },
 ];
 

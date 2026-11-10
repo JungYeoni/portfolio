@@ -53,7 +53,7 @@ export default function Portfolio() {
                   <p className="text-xs font-semibold tracking-wider text-muted uppercase">직접 사용한 기술</p>
                   <p className="mt-2 text-base text-muted">{p.stack.join(" · ")}</p>
                   <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-base">
-                    {"links" in p ? p.links.map((l) => <ExtLink key={l.label} {...l} />) : <ExtLink href={p.href} label="GitHub" />}
+                    {"links" in p ? p.links.map((l) => <ExtLink key={l.label} {...l} />) : p.href && <ExtLink href={p.href} label="GitHub" />}
                   </div>
                 </div>
               </article>
