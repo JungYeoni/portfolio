@@ -258,7 +258,7 @@ export const experience = [
   {
     organization: "금성출판사 (Kumsung Publishing)",
     period: "2023.11–2024.09",
-    description: "정보 교과 디지털 교과서 콘텐츠 검토와 학습 구조 설계를 지원",
+    description: "프리랜서로 정보 교과 디지털 교과서 콘텐츠 검토와 학습 구조 설계를 지원",
   },
 ];
 
