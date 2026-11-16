@@ -271,7 +271,7 @@ export const education: { school: string; period: string; majors?: { degree: str
       { degree: "B.A. in Economics", college: "College of Business & Economics" },
     ],
   },
-  { school: "Cheongdam High School", period: "2020.03–2022.12" },
+  { school: "Cheongdam High School", period: "2020.03–2023.02" },
 ];
 
 export const awards:{ title: string; period: string; detail?: string; award: string }[] = [
