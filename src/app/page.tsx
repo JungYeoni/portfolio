@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { activities, awards, certifications, education, experience, profile, projects } from "@/data/portfolio";
 import { ExtLink, Section } from "./_components/ui";
@@ -74,17 +75,32 @@ export default function Home() {
         </Section>
 
         <Section id="projects" title="Projects">
-          <div className="grid gap-10">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {projects.map((project) => (
-              <article key={project.title} className="grid gap-2 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-12">
-                <p className="pt-1 text-lg font-semibold text-muted">{project.period}</p>
-                <div className="min-w-0">
-                  <h3 className="text-2xl font-bold">{project.title}</h3>
-                  <p className="mt-3 text-lg leading-relaxed">
+              <article key={project.title} className="flex flex-col overflow-hidden rounded-3xl bg-card">
+                {project.cover ? (
+                  <div className="relative aspect-video">
+                    <Image
+                      src={project.cover}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                ) : (
+                  <div className="grid aspect-video place-items-center bg-card-strong text-xl font-black text-muted">
+                    {project.title.split(" (")[0]}
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <p className="text-xs font-semibold text-muted">{project.period}</p>
+                  <h3 className="mt-1 text-lg font-bold">{project.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed">
                     {project.shortDescription}
                     <span className="text-muted"> · {project.role}</span>
                   </p>
-                  <p className="mt-2 text-base text-muted">{project.stack.join(" · ")}</p>
+                  <p className="mt-auto pt-4 text-xs text-muted">{project.stack.join(" · ")}</p>
                 </div>
               </article>
             ))}
