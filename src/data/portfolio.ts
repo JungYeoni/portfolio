@@ -12,6 +12,7 @@ export type Project = {
   summary: string;
   stories: { title: string; paragraphs: string[] }[];
   stack: string[];
+  cover?: string;
   links: { label: string; href: string }[];
 };
 
@@ -24,6 +25,7 @@ type CompactProject = {
   shortDescription: string;
   paragraphs: string[];
   stack: string[];
+  cover?: string;
   href?: string;
 };
 
@@ -48,6 +50,7 @@ export const profile = {
 const featured: Project[] = [
   {
     title: "트립게더 (Tripgether)",
+    cover: "/projects/tripgether.webp",
     period: "2025.09–11",
     sortDate: "2025-11-25",
     category: ["AI 서비스"],
@@ -89,6 +92,7 @@ const featured: Project[] = [
   },
   {
     title: "추크크 (Recommendation Creator Crew)",
+    cover: "/projects/chukeukeu.webp",
     period: "2026.05–07",
     sortDate: "2026-07-11",
     category: ["모델링", "분석"],
@@ -126,6 +130,7 @@ const featured: Project[] = [
   },
   {
     title: "유모차 (Yumocha)",
+    cover: "/projects/yumocha.webp",
     period: "2026.06–08",
     sortDate: "2026-08-09",
     category: ["분석", "모델링"],
@@ -168,6 +173,7 @@ const featured: Project[] = [
   },
   {
     title: "서울숨셔 (Seoulbreath)",
+    cover: "/projects/seoulbreath.webp",
     period: "2026.04–05",
     sortDate: "2026-05-14",
     category: ["분석", "AI 서비스"],
@@ -205,6 +211,7 @@ const featured: Project[] = [
 const others: CompactProject[] = [
   {
     title: "솔솔 (sol sol)",
+    cover: "/projects/solsol.webp",
     period: "2026.05",
     sortDate: "2026-05-23",
     category: "AI 서비스",
@@ -219,6 +226,7 @@ const others: CompactProject[] = [
   },
   {
     title: "비자부기 (Visa-Bugi)",
+    cover: "/projects/visabugi.webp",
     period: "2026.08",
     sortDate: "2026-08-28",
     category: "AI 서비스",
@@ -233,6 +241,7 @@ const others: CompactProject[] = [
   },
   {
     title: "사회적 고립 분석 (Social Isolation Analysis)",
+    cover: "/projects/isolation.webp",
     period: "2026.09–10",
     sortDate: "2026-10-25",
     category: "분석",

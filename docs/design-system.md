@@ -13,7 +13,7 @@
 | `foreground` | `#15181c` | `#e6e8eb` | 기본 글자색, 강조 본문 |
 | `muted` | `rgb(21 24 28 / 0.6)` | `rgb(230 232 235 / 0.55)` | 보조 글자색(기간, 설명, 비활성 링크) |
 | `card` | `#f7f7f7` | `rgb(255 255 255 / 0.05)` | 카드 배경 |
-| `card-strong` | `rgb(0 0 0 / 0.07)` | `rgb(0 0 0 / 0.4)` | 정의만 되어 있고 현재 사용처 없음 |
+| `card-strong` | `rgb(0 0 0 / 0.07)` | `rgb(0 0 0 / 0.4)` | 대표 이미지가 없는 프로젝트 카드의 이미지 자리 |
 | `line` | `rgb(0 0 0 / 0.1)` | `rgb(255 255 255 / 0.1)` | 구분선, 테두리 |
 | `accent` | `#a16207` | `#facc15` | 강조(활성 메뉴 밑줄, 수상 표기, 번호, 토글 hover) |
 
@@ -36,7 +36,7 @@
 |------|--------|--------|
 | 섹션 제목(h2) | `text-[32px] sm:text-5xl md:text-6xl` `font-black` `tracking-tight` `uppercase` | `Section` 컴포넌트 |
 | 페이지 제목(h1, 소개) | `text-4xl` `font-black` `leading-tight` | 소개 페이지 헤더 |
-| 프로젝트 제목(h3) | `text-2xl font-bold` (포트폴리오는 `sm:text-4xl`) | 프로젝트 카드 |
+| 프로젝트 제목(h3) | 소개 페이지 카드 `text-lg font-bold`, 포트폴리오 `text-2xl font-bold sm:text-4xl` | 프로젝트 카드 |
 | 하위 제목(h3/h4) | `text-lg`~`text-xl` `font-semibold` | 경력, 스토리 제목 |
 | 본문 | `text-base` `leading-8`(긴 글) 또는 `leading-relaxed` | 설명 문단 |
 | 캡션 | `text-xs`~`text-sm` `text-muted` | 기간, 역할, 카테고리 태그 |
@@ -50,7 +50,7 @@
 - **세로 여백**: 소개 페이지 `py-16`, 포트폴리오 페이지 `pb-16`.
 - **섹션 간격**: `Section`이 `mt-24`, 제목 아래 `mb-8`, 앵커 이동용 `scroll-mt-24`를 갖는다.
 - **긴 글 폭**: 문단은 `max-w-3xl`로 제한해 줄 길이를 유지한다.
-- **기간–내용 2열 목록**: 경력·프로젝트 목록은 `md` 이상에서 `md:grid-cols-[12rem_minmax(0,1fr)] md:gap-12`로 왼쪽에 기간, 오른쪽에 내용을 둔다. 그보다 좁으면 한 열로 쌓인다.
+- **기간–내용 2열 목록**: 학력·경력 목록은 `md` 이상에서 `md:grid-cols-[12rem_minmax(0,1fr)] md:gap-12`로 왼쪽에 기간, 오른쪽에 내용을 둔다. 그보다 좁으면 한 열로 쌓인다.
 - **반응형 기준 폭**: 확정 예정 (#5). 현재는 Tailwind 기본 구간(`sm` 640px, `md` 768px, `lg` 1024px)을 쓴다.
 - **푸터**: 본문과 같은 `max-w-5xl`, 상단 `border-line`, `px-6 py-8`.
 
@@ -59,6 +59,7 @@
 공용 컴포넌트는 `src/app/_components/ui.tsx`(`Section`, `ExtLink`)에 있다.
 
 - **카드**: `rounded-xl bg-card`, 내부 패딩 `p-5`~`p-6`. 목록형 카드의 항목 사이는 `border-b border-line`으로 나누고 마지막 항목은 테두리를 뺀다.
+- **프로젝트 카드(소개 페이지)**: `rounded-3xl bg-card`, `lg` 이상 3열·`sm` 이상 2열·그보다 좁으면 1열(`gap-4`). 위쪽에 16:9 대표 이미지(`next/image` `fill`, `object-cover object-top`), 아래에 기간·제목·한 줄 설명·역할·기술 스택. 이미지는 `portfolio.ts`의 `cover`에 경로를 적고 `public/projects/`에 webp로 두며, 공개 전 팀원 이름 등 개인정보를 가린다. `cover`가 없으면 `bg-card-strong` 칸에 프로젝트 이름을 넣는다.
 - **태그(pill)**: `rounded-full border border-line px-2 py-0.5 text-xs`. 포트폴리오 프로젝트의 카테고리에 쓴다.
 - **외부 링크**: `ExtLink`를 쓴다. 새 탭(`target="_blank"`, `rel="noreferrer"`)으로 열고 라벨 뒤에 ` ↗`를 붙이며 hover 시 밑줄. 내부 페이지로 가는 강조 링크도 같은 `↗` 표기를 따른다.
 - **텍스트 링크 hover**: 보조 링크는 `text-muted`로 두고 hover 시 `hover:text-foreground hover:underline`. 소개 페이지 목차, 푸터 링크가 이 규칙을 따른다.
